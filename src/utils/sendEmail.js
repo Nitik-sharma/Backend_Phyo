@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const user = process.env.DOCTOR_EMAIL;
-const pass = process.env.EMAIL_PASS || "rpfczhvfckygrxmr";
+const pass = process.env.EMAIL_PASS 
 
 console.log("SMTP USER:", user);
 console.log("SMTP PASS:", pass ? "Loaded" : "Missing");
