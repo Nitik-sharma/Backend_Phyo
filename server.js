@@ -16,15 +16,14 @@ connectDB()
 console.log("MAIL:", process.env.EMAIL_USER);
 console.log("PASS:", process.env.EMAIL_PASS);
 console.log("DOCTOR_EMAIL",process.env.DOCTOR_EMAIL)
-app.use(cors(
-    {
-        origin: [
-            "http://localhost:3000",
-            "https://phyo-4n2f.vercel.app"
-        ],
-        credentials: true
-    }
-))
+app.use(cors({
+  origin: [
+    "http://localhost:3000",
+    "https://phyo-4n2f.vercel.app"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 app.use(express.json())
 app.use("/api/appointments", appointmentRoutes);
 app.use("/api/contact",contactRoute)
